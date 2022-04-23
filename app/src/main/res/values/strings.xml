@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">HW14App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add">add</string>
+    <string name="new_word">اطلاعات کلمه جدید</string>
+    <string name="persian_word">کلمه به فارسی</string>
+    <string name="english_word">کلمه به انگلیسی</string>
+    <string name="synonym">مترادف</string>
+    <string name="example">مثال</string>
+    <string name="register">ثبت</string>
+    <string name="web_link">لینک ویکی پدیا</string>
+</resources>

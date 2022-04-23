@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.hw14app.views.MainFragment"
+        android:label="Dictionary"
+        tools:layout="@layout/fragment_main2" >
+        <action
+            android:id="@+id/action_mainFragment_to_wordDetailFragment"
+            app:destination="@id/wordDetailFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addWordFragment"
+            app:destination="@id/addWordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordDetailFragment"
+        android:name="com.example.hw14app.views.WordDetailFragment"
+        android:label="fragment_word_detail"
+        tools:layout="@layout/fragment_word_detail" />
+    <fragment
+        android:id="@+id/addWordFragment"
+        android:name="com.example.hw14app.views.AddWordFragment"
+        android:label="fragment_add_word"
+        tools:layout="@layout/fragment_add_word" />
+
+</navigation>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="20dp"
+    android:orientation="vertical"
+    tools:context=".views.AddWordFragment">
+
+
+    <TextView
+        android:id="@+id/textViewStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@color/green"
+        android:text="@string/new_word"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="305dp" />
+
+
+    <EditText
+        android:id="@+id/editTextPersian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/persian_word"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="425dp" />
+
+    <EditText
+        android:id="@+id/editTextEnglish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/english_word"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="425dp" />
+
+    <EditText
+        android:id="@+id/editTextSynonym"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/synonym"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="425dp" />
+
+    <EditText
+        android:id="@+id/editTextExample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/example"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="425dp" />
+
+        <EditText
+            android:id="@+id/editTextWebLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/web_link"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="425dp" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonRegister"
+        app:cornerRadius="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/register"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="431dp" />
+
+
+</LinearLayout>
