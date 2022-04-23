@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".views.WordDetailFragment"
+    android:layout_margin="8dp"
     android:orientation="vertical"
-    android:layout_margin="8dp" >
+    tools:context=".views.WordDetailFragment">
+
     <TextView
         android:id="@+id/textViewStart"
         android:layout_width="match_parent"
@@ -26,8 +27,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="@string/persian_word"
         android:inputType="text"
+        android:text="@string/persian_word"
         tools:layout_editor_absoluteX="124dp"
         tools:layout_editor_absoluteY="425dp" />
 
@@ -36,8 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="@string/english_word"
         android:inputType="text"
+        android:text="@string/english_word"
         tools:layout_editor_absoluteX="124dp"
         tools:layout_editor_absoluteY="425dp" />
 
@@ -46,8 +47,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="@string/synonym"
         android:inputType="text"
+        android:text="@string/synonym"
         tools:layout_editor_absoluteX="124dp"
         tools:layout_editor_absoluteY="425dp" />
 
@@ -56,8 +57,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="@string/example"
         android:inputType="text"
+        android:text="@string/example"
         tools:layout_editor_absoluteX="124dp"
         tools:layout_editor_absoluteY="425dp" />
 
@@ -66,33 +67,104 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="@string/web_link"
         android:inputType="text"
+        android:text="@string/web_link"
         tools:layout_editor_absoluteX="124dp"
         tools:layout_editor_absoluteY="425dp" />
 
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnEdit"
-        app:cornerRadius="100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:backgroundTint="@color/blue"
         android:text="ویرایش کلمه"
         android:textAllCaps="false"
+        app:cornerRadius="100dp"
         tools:layout_editor_absoluteX="165dp"
         tools:layout_editor_absoluteY="431dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnDelete"
-        app:cornerRadius="100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/blue"
         android:text="حذف کلمه"
         android:textAllCaps="false"
+        app:cornerRadius="100dp"
         tools:layout_editor_absoluteX="165dp"
         tools:layout_editor_absoluteY="431dp" />
+
+    <LinearLayout
+        android:id="@+id/llEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/editTextPersian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/persian_word"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="425dp" />
+
+        <EditText
+            android:id="@+id/editTextEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/english_word"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="425dp" />
+
+        <EditText
+            android:id="@+id/editTextSynonym"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/synonym"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="425dp" />
+
+        <EditText
+            android:id="@+id/editTextExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/example"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="425dp" />
+
+        <EditText
+            android:id="@+id/editTextWebLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/web_link"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="425dp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/blue"
+            android:text="@string/register"
+            android:textAllCaps="false"
+            app:cornerRadius="100dp"
+            tools:layout_editor_absoluteX="165dp"
+            tools:layout_editor_absoluteY="431dp" />
+    </LinearLayout>
 
 </LinearLayout>

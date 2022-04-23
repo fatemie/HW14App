@@ -48,6 +48,10 @@ object DictionaryRepository {
         dao?.delete(word)
     }
 
+    fun updateWord(word : Word){
+        dao?.update(word)
+    }
+
     fun getMinId(): Int? {
         return dao?.getMinId()
     }
