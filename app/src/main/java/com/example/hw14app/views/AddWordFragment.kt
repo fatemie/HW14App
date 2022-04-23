@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.hw14app.R
 import com.example.hw14app.databinding.FragmentAddWordBinding
 import com.example.hw14app.model.Word
 import com.example.hw14app.viewModels.MainViewModel
@@ -41,6 +43,7 @@ class AddWordFragment : Fragment() {
             )
             vModel.addWord(word)
             Toast.makeText(activity, "کلمه جدید با موفقیت افزوده شد.", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_addWordFragment_to_mainFragment)
         }
     }
 

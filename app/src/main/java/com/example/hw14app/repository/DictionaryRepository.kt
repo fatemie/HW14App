@@ -44,6 +44,10 @@ object DictionaryRepository {
         return dao?.getWordsCount2()
     }
 
+    fun deleteWord(word: Word){
+        dao?.delete(word)
+    }
+
     fun getMinId(): Int? {
         return dao?.getMinId()
     }

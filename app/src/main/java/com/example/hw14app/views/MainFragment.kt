@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.*
 import androidx.navigation.fragment.findNavController
 import com.example.hw14app.R
 import com.example.hw14app.databinding.FragmentMain2Binding
@@ -16,6 +15,7 @@ import com.example.hw14app.model.Word
 import com.example.hw14app.repository.DictionaryRepository
 import com.example.hw14app.viewModels.MainViewModel
 import com.example.myapp.WordAdapter
+import kotlin.concurrent.fixedRateTimer
 
 class MainFragment : Fragment() {
 
@@ -57,6 +57,8 @@ class MainFragment : Fragment() {
         binding.wordsRecyclerView.adapter = adapter
         adapter.submitList(vModel.dictionary)
     }
+
+
 
 
 }

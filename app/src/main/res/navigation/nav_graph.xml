@@ -25,11 +25,19 @@
         <argument
             android:name="wordId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_wordDetailFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/addWordFragment"
         android:name="com.example.hw14app.views.AddWordFragment"
         android:label="fragment_add_word"
-        tools:layout="@layout/fragment_add_word" />
+        tools:layout="@layout/fragment_add_word" >
+        <action
+            android:id="@+id/action_addWordFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 
 </navigation>

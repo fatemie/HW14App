@@ -22,6 +22,10 @@ class MainViewModel(app: Application): AndroidViewModel(app){
         DictionaryRepository.insertWord(word)
     }
 
+    fun deleteWord(word: Word){
+        DictionaryRepository.deleteWord(word)
+    }
+
     fun getWord(wordId : Int) : Word? {
         return DictionaryRepository.getWordWithID(wordId)
     }
