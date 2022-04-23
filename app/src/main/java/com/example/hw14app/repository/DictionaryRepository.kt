@@ -7,7 +7,6 @@ import com.example.hw14app.database.WordDao
 import com.example.hw14app.model.Word
 
 object DictionaryRepository {
-    val dictionary = arrayListOf<Word>()
 
     var db: AppDatabase?=null
     var dao: WordDao?=null
@@ -19,6 +18,10 @@ object DictionaryRepository {
 
     fun insertWord( word: Word){
         dao?.insertAll(word)
+    }
+
+    fun getAllWords() : List<Word>? {
+        return dao?.getAllWords()
     }
 
     fun getWordWithPersian(persian : String) : Word?{

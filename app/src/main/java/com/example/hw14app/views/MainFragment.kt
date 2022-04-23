@@ -47,6 +47,6 @@ class MainFragment : Fragment() {
     private fun initList() {
         var adapter = WordAdapter({ word -> vModel.goToWordDetail(word) })
         binding.wordsRecyclerView.adapter = adapter
-        adapter.submitList(DictionaryRepository.dictionary)
+        adapter.submitList(vModel.dictionary)
     }
 }

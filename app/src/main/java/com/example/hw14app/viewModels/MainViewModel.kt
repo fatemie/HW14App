@@ -7,8 +7,11 @@ import com.example.hw14app.repository.DictionaryRepository
 
 class MainViewModel(app: Application): AndroidViewModel(app){
 
+    var dictionary = listOf<Word>()
+
     init{
         DictionaryRepository.initDB(app.applicationContext)
+        dictionary = DictionaryRepository.getAllWords()!!
     }
     fun goToWordDetail(word: Word) {
 

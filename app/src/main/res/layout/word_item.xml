@@ -2,13 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="8dp">
 
-    <Button
-        android:id="@+id/btnWordDetail"
+    <TextView
+        android:id="@+id/tvWordPersian"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="203dp" />
+        android:layout_height="match_parent"
+        android:text="persian"
+        android:layout_weight="1"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/tvWordEnglish"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="english"
+        android:layout_weight="1"
+        android:gravity="center"/>
 </LinearLayout>

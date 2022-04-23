@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -17,11 +18,16 @@ class WordAdapter(var onWordClicked : WordClickHandler) :
 
 
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
-        var btnWordDetail = view.findViewById<Button>(R.id.btnWordDetail)
+        var tvWordPersian = view.findViewById<TextView>(R.id.tvWordPersian)
+        var tvWordEnglish = view.findViewById<TextView>(R.id.tvWordEnglish)
 
         fun bind(word : Word, onWordClicked: WordClickHandler){
-            btnWordDetail.text = word.id.toString()
-            btnWordDetail.setOnClickListener {
+            tvWordEnglish.text = word.english.toString()
+            tvWordPersian.text = word.persian.toString()
+            tvWordPersian.setOnClickListener {
+                onWordClicked(word)
+            }
+            tvWordEnglish.setOnClickListener {
                 onWordClicked(word)
             }
         }
