@@ -52,6 +52,44 @@
 
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/teal_200"
+            app:cardCornerRadius="20sp"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <EditText
+                    android:id="@+id/persianSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="جستجو کلمه به فارسی"/>
+                <EditText
+                    android:id="@+id/englishSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="جستجو کلمه به انگلیسی"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonSearch2"
+                    app:cornerRadius="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/teal_700"
+                    android:text="جستجو"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:textAllCaps="false"
+                    tools:layout_editor_absoluteX="165dp"
+                    tools:layout_editor_absoluteY="431dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/wordsRecyclerView"
             android:layout_width="match_parent"

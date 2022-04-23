@@ -33,4 +33,14 @@ class MainViewModel(app: Application): AndroidViewModel(app){
     fun getWord(wordId : Int) : Word? {
         return DictionaryRepository.getWordWithID(wordId)
     }
+
+    fun getWordWithPersian(persian : String): Word?{
+        return DictionaryRepository.getWordWithPersian(persian)
+    }
+
+    fun getWordWithEnglish(english : String): Word?{
+        return DictionaryRepository.getWordWithEnglish(english)
+    }
+
+
 }
