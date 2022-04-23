@@ -62,15 +62,19 @@
         tools:layout_editor_absoluteX="124dp"
         tools:layout_editor_absoluteY="425dp" />
 
-    <TextView
-        android:id="@+id/textViewWebLink"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonWeb"
+        app:cornerRadius="100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="@string/web_link"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="425dp" />
+        android:backgroundTint="@color/blue_1"
+        android:text="لینک ویکی پدیا"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="431dp" />
+
 
 
     <com.google.android.material.button.MaterialButton
@@ -148,10 +152,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/web_link"
+            android:hint="لینک ویکی پدیا"
             android:inputType="text"
+            android:text="@string/web_link"
             tools:layout_editor_absoluteX="124dp"
             tools:layout_editor_absoluteY="425dp" />
+
+
 
 
         <com.google.android.material.button.MaterialButton

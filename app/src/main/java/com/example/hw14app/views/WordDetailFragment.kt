@@ -65,6 +65,14 @@ class WordDetailFragment : Fragment() {
             binding.llEdit.isVisible = false
             Toast.makeText(activity, "اطلاعات کلمه با موفقیت به روز شد", Toast.LENGTH_SHORT).show()
         }
+        binding.buttonWeb.setOnClickListener {
+            goToWebLink(word.weakiLink)
+        }
+    }
+
+    private fun goToWebLink(url: String) {
+        val action = WordDetailFragmentDirections.actionWordDetailFragmentToWebViewFragment(url)
+        findNavController().navigate(action)
     }
 
     private fun initViews() {
@@ -72,7 +80,6 @@ class WordDetailFragment : Fragment() {
         binding.textViewEnglish.text = word?.english
         binding.textViewSynonym.text = word?.synonym
         binding.textViewExample.text = word?.example
-        binding.textViewWebLink.text = word?.weakiLink
 
         binding.editTextPersian.setText(word?.persian)
         binding.editTextEnglish.setText(word?.english)

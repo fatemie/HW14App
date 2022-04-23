@@ -29,6 +29,9 @@
             android:id="@+id/action_wordDetailFragment_to_mainFragment"
             app:destination="@id/mainFragment"
             app:popUpTo="@id/mainFragment" />
+        <action
+            android:id="@+id/action_wordDetailFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
     </fragment>
     <fragment
         android:id="@+id/addWordFragment"
@@ -38,6 +41,15 @@
         <action
             android:id="@+id/action_addWordFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.example.hw14app.views.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" >
+        <argument
+            android:name="wordUrl"
+            app:argType="string" />
     </fragment>
 
 </navigation>
