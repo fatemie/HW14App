@@ -1,8 +1,13 @@
 package com.example.hw14app
 
+import android.app.Dialog
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hw14app.databinding.ActivityMainBinding
@@ -18,5 +23,24 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+    }
+}
+
+class FirstDialogFragment : DialogFragment() {
+    private val vModel : MainViewModel by viewModels()
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        return activity?.let {
+            // Use the Builder class for convenient dialog construction
+            val builder = AlertDialog.Builder(it)
+            builder.setMessage("کلمه موردنظر شما پیدا نشد!")
+                .setTitle("جستجو")
+                .setNeutralButton("باشه",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        // User cancelled the dialog
+                        dismiss()
+                    })
+            // Create the AlertDialog object and return it
+            builder.create()
+        } ?: throw IllegalStateException("Activity cannot be null")
     }
 }

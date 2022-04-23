@@ -9,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.hw14app.FirstDialogFragment
 import com.example.hw14app.R
 import com.example.hw14app.databinding.FragmentMain2Binding
 import com.example.hw14app.model.Word
@@ -72,9 +73,11 @@ class MainFragment : Fragment() {
         if(word != null){
             goToWordDetail(word)
         }else{
-            Toast.makeText(activity, "کلمه مورد نظر پیدا نشد", Toast.LENGTH_SHORT).show()
+            val dialog = FirstDialogFragment()
+            activity?.let { dialog.show(it.supportFragmentManager, "NoticeDialogFragment") }
         }
     }
+
 
     private fun initList() {
         var adapter = WordAdapter({ word -> goToWordDetail(word) })
