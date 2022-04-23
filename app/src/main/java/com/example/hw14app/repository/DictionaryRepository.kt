@@ -32,6 +32,10 @@ object DictionaryRepository {
         return dao?.getWordWithEnglish(english)
     }
 
+    fun getWordWithID(id : Int) : Word?{
+        return dao?.getWordWithID(id)
+    }
+
     fun getWordsCount(): LiveData<Int>? {
         return dao?.getWordsCount()
     }

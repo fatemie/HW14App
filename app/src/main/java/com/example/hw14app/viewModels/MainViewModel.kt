@@ -17,11 +17,12 @@ class MainViewModel(app: Application): AndroidViewModel(app){
         dictionary = DictionaryRepository.getAllWords()!!
         wordCountLiveData.value = DictionaryRepository.getWordsCount2()!!
     }
-    fun goToWordDetail(word: Word) {
-
-    }
 
     fun addWord(word: Word) {
         DictionaryRepository.insertWord(word)
+    }
+
+    fun getWord(wordId : Int) : Word? {
+        return DictionaryRepository.getWordWithID(wordId)
     }
 }

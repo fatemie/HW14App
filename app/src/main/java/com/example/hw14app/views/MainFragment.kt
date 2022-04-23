@@ -5,12 +5,14 @@ import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.hw14app.R
 import com.example.hw14app.databinding.FragmentMain2Binding
+import com.example.hw14app.model.Word
 import com.example.hw14app.repository.DictionaryRepository
 import com.example.hw14app.viewModels.MainViewModel
 import com.example.myapp.WordAdapter
@@ -45,10 +47,16 @@ class MainFragment : Fragment() {
         findNavController().navigate(R.id.action_mainFragment_to_addWordFragment)
     }
 
+    private fun goToWordDetail(word: Word) {
+        val action = MainFragmentDirections.actionMainFragmentToWordDetailFragment(word.id)
+        findNavController().navigate(action)
+    }
 
     private fun initList() {
-        var adapter = WordAdapter({ word -> vModel.goToWordDetail(word) })
+        var adapter = WordAdapter({ word -> goToWordDetail(word) })
         binding.wordsRecyclerView.adapter = adapter
         adapter.submitList(vModel.dictionary)
     }
+
+
 }

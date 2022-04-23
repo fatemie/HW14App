@@ -25,6 +25,9 @@ interface WordDao {
     @Query("SELECT * FROM Word WHERE english IN (:english)")
     fun getWordWithEnglish(english: String): Word
 
+    @Query("SELECT * FROM Word WHERE id IN (:id)")
+    fun getWordWithID(id: Int): Word
+
     @Query("SELECT COUNT (*) FROM Word")
     fun getWordsCount(): LiveData<Int>
 

@@ -1,14 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.WordDetailFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.WordDetailFragment"
+    android:orientation="vertical"
+    android:layout_margin="8dp" >
     <TextView
+        android:id="@+id/textViewStart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@color/green"
+        android:text="اطلاعات کلمه"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="305dp" />
 
-</FrameLayout>
+
+    <TextView
+        android:id="@+id/textViewPersian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="@string/persian_word"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="425dp" />
+
+    <TextView
+        android:id="@+id/textViewEnglish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="@string/english_word"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="425dp" />
+
+    <TextView
+        android:id="@+id/textViewSynonym"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="@string/synonym"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="425dp" />
+
+    <TextView
+        android:id="@+id/textViewExample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="@string/example"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="425dp" />
+
+    <TextView
+        android:id="@+id/textViewWebLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="@string/web_link"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="425dp" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEdit"
+        app:cornerRadius="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/blue"
+        android:text="ویرایش کلمه"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="431dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDelete"
+        app:cornerRadius="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:text="حذف کلمه"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="431dp" />
+
+</LinearLayout>

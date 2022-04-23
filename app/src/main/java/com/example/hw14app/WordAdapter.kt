@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -20,14 +21,12 @@ class WordAdapter(var onWordClicked : WordClickHandler) :
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
         var tvWordPersian = view.findViewById<TextView>(R.id.tvWordPersian)
         var tvWordEnglish = view.findViewById<TextView>(R.id.tvWordEnglish)
+        var wordCardView = view.findViewById<CardView>(R.id.wordCardView)
 
         fun bind(word : Word, onWordClicked: WordClickHandler){
             tvWordEnglish.text = word.english.toString()
             tvWordPersian.text = word.persian.toString()
-            tvWordPersian.setOnClickListener {
-                onWordClicked(word)
-            }
-            tvWordEnglish.setOnClickListener {
+            wordCardView.setOnClickListener {
                 onWordClicked(word)
             }
         }
