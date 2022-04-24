@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
@@ -23,6 +24,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        supportActionBar?.hide()
+        binding.iconSplash.alpha= 0f
+        binding.iconSplash.animate().setDuration(3000).alpha(1f).withEndAction {
+            binding.navHostFragment.visibility = View.VISIBLE
+            binding.iconSplash.visibility = View.GONE
+            overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+        }
     }
 }
 
