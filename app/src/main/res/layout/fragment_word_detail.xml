@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
+    android:layout_margin="16dp"
     android:orientation="vertical"
     tools:context=".views.WordDetailFragment">
 
@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
+        android:textSize="16sp"
         android:text="@string/persian_word"
         tools:layout_editor_absoluteX="124dp"
         tools:layout_editor_absoluteY="425dp" />
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
+        android:textSize="16sp"
         android:text="@string/english_word"
         tools:layout_editor_absoluteX="124dp"
         tools:layout_editor_absoluteY="425dp" />
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
+        android:textSize="16sp"
         android:text="@string/synonym"
         tools:layout_editor_absoluteX="124dp"
         tools:layout_editor_absoluteY="425dp" />
@@ -57,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
+        android:textSize="16sp"
         android:text="@string/example"
         tools:layout_editor_absoluteX="124dp"
         tools:layout_editor_absoluteY="425dp" />
@@ -67,13 +67,22 @@
         app:cornerRadius="100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue_1"
         android:text="لینک ویکی پدیا"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:textAllCaps="false"
         tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="431dp" />
+        tools:layout_editor_absoluteY="431dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonPlaySound"
+        app:cornerRadius="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="پخش صدا"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="431dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
 
 
@@ -154,7 +163,6 @@
             android:ems="10"
             android:hint="لینک ویکی پدیا"
             android:inputType="text"
-            android:text="@string/web_link"
             tools:layout_editor_absoluteX="124dp"
             tools:layout_editor_absoluteY="425dp" />
 

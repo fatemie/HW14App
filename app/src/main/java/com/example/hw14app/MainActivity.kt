@@ -29,9 +29,12 @@ class MainActivity : AppCompatActivity() {
         binding.iconSplash.animate().setDuration(3000).alpha(1f).withEndAction {
             binding.navHostFragment.visibility = View.VISIBLE
             binding.iconSplash.visibility = View.GONE
+            supportActionBar?.show()
             overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
         }
     }
+
+
 }
 
 class FirstDialogFragment : DialogFragment() {
@@ -51,4 +54,6 @@ class FirstDialogFragment : DialogFragment() {
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }
+
+
 }

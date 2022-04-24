@@ -1,5 +1,6 @@
 package com.example.hw14app.views
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,11 +15,13 @@ import com.example.hw14app.R
 import com.example.hw14app.databinding.FragmentWordDetailBinding
 import com.example.hw14app.model.Word
 import com.example.hw14app.viewModels.MainViewModel
+import java.io.IOException
 
 
 class WordDetailFragment : Fragment() {
     private val vModel: MainViewModel by activityViewModels()
     lateinit var binding : FragmentWordDetailBinding
+    private var player: MediaPlayer? = null
     private var wordId = 0
     lateinit var word : Word
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,7 +62,8 @@ class WordDetailFragment : Fragment() {
                 binding.editTextEnglish.text.toString(),
                 binding.editTextExample.text.toString(),
                 binding.editTextSynonym.text.toString(),
-                binding.editTextWebLink.text.toString()
+                binding.editTextWebLink.text.toString(),
+                ""
             )
             vModel.updateWord(newWord)
             binding.llEdit.isVisible = false
@@ -67,6 +71,9 @@ class WordDetailFragment : Fragment() {
         }
         binding.buttonWeb.setOnClickListener {
             goToWebLink(word.weakiLink)
+        }
+        binding.buttonPlaySound.setOnClickListener {
+            startPlaying()
         }
     }
 
@@ -86,6 +93,18 @@ class WordDetailFragment : Fragment() {
         binding.editTextSynonym.setText(word?.synonym)
         binding.editTextExample.setText(word?.example)
         binding.editTextWebLink.setText(word?.weakiLink)
+    }
+
+    private fun startPlaying() {
+        player = MediaPlayer().apply {
+            try {
+                setDataSource(word?.soundAddress)
+                prepare()
+                start()
+            } catch (e: IOException) {
+//                Log.e(LOG_TAG, "prepare() failed")
+            }
+        }
     }
 
 }
