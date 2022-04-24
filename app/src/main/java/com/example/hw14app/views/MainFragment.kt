@@ -8,11 +8,13 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.hw14app.FirstDialogFragment
 import com.example.hw14app.R
 import com.example.hw14app.databinding.FragmentMain2Binding
 import com.example.hw14app.model.Word
+import com.example.hw14app.repository.DictionaryRepository
 import com.example.hw14app.viewModels.MainViewModel
 import com.example.myapp.WordAdapter
 
@@ -84,6 +86,9 @@ class MainFragment : Fragment() {
         binding.wordsRecyclerView.adapter = adapter
         adapter.submitList(vModel.dictionary)
     }
+
+
+
 
 
 }

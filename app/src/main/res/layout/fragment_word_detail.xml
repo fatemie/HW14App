@@ -1,185 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
-    android:orientation="vertical"
     tools:context=".views.WordDetailFragment">
 
-    <TextView
-        android:id="@+id/textViewStart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:background="@color/green"
-        android:text="اطلاعات کلمه"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="305dp" />
-
-
-    <TextView
-        android:id="@+id/textViewPersian"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:textSize="16sp"
-        android:text="@string/persian_word"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="425dp" />
-
-    <TextView
-        android:id="@+id/textViewEnglish"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:textSize="16sp"
-        android:text="@string/english_word"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="425dp" />
-
-    <TextView
-        android:id="@+id/textViewSynonym"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:textSize="16sp"
-        android:text="@string/synonym"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="425dp" />
-
-    <TextView
-        android:id="@+id/textViewExample"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:textSize="16sp"
-        android:text="@string/example"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="425dp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonWeb"
-        app:cornerRadius="100dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="لینک ویکی پدیا"
-        android:textAllCaps="false"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="431dp"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonPlaySound"
-        app:cornerRadius="100dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="پخش صدا"
-        android:textAllCaps="false"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="431dp"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
-
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="@color/blue"
-        android:text="ویرایش کلمه"
-        android:textAllCaps="false"
-        app:cornerRadius="100dp"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="431dp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnDelete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
-        android:text="حذف کلمه"
-        android:textAllCaps="false"
-        app:cornerRadius="100dp"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="431dp" />
-
     <LinearLayout
-        android:id="@+id/llEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone">
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editTextPersian"
+        <TextView
+            android:id="@+id/textViewStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/green"
+            android:text="@string/word_info"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="305dp" />
+
+
+        <TextView
+            android:id="@+id/textViewPersian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/persian_word"
-            android:inputType="text"
+            android:text="@string/persian_word"
+            android:textSize="16sp"
             tools:layout_editor_absoluteX="124dp"
             tools:layout_editor_absoluteY="425dp" />
 
-        <EditText
-            android:id="@+id/editTextEnglish"
+        <TextView
+            android:id="@+id/textViewEnglish"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/english_word"
-            android:inputType="text"
+            android:text="@string/english_word"
+            android:textSize="16sp"
             tools:layout_editor_absoluteX="124dp"
             tools:layout_editor_absoluteY="425dp" />
 
-        <EditText
-            android:id="@+id/editTextSynonym"
+        <TextView
+            android:id="@+id/textViewSynonym"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/synonym"
-            android:inputType="text"
+            android:text="@string/synonym"
+            android:textSize="16sp"
             tools:layout_editor_absoluteX="124dp"
             tools:layout_editor_absoluteY="425dp" />
 
-        <EditText
-            android:id="@+id/editTextExample"
+        <TextView
+            android:id="@+id/textViewExample"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/example"
-            android:inputType="text"
+            android:text="@string/example"
+            android:textSize="16sp"
             tools:layout_editor_absoluteX="124dp"
             tools:layout_editor_absoluteY="425dp" />
-
-        <EditText
-            android:id="@+id/editTextWebLink"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="لینک ویکی پدیا"
-            android:inputType="text"
-            tools:layout_editor_absoluteX="124dp"
-            tools:layout_editor_absoluteY="425dp" />
-
-
-
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonRegister"
+            android:id="@+id/buttonWeb"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="@color/blue"
-            android:text="@string/register"
+            android:text="@string/web_link"
             android:textAllCaps="false"
             app:cornerRadius="100dp"
             tools:layout_editor_absoluteX="165dp"
             tools:layout_editor_absoluteY="431dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonPlaySound"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/play"
+            android:textAllCaps="false"
+            app:cornerRadius="100dp"
+            tools:layout_editor_absoluteX="165dp"
+            tools:layout_editor_absoluteY="431dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:layout_marginTop="50dp"
+            android:text="@string/delete"
+            android:textAllCaps="false"
+            app:cornerRadius="100dp"
+            tools:layout_editor_absoluteX="165dp"
+            tools:layout_editor_absoluteY="431dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:text="@string/edit"
+            android:textAllCaps="false"
+            app:cornerRadius="100dp"
+            tools:layout_editor_absoluteX="165dp"
+            tools:layout_editor_absoluteY="431dp" />
+
+        <LinearLayout
+            android:id="@+id/llEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16sp"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/editTextPersian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/persian_word"
+                android:inputType="text"
+                tools:layout_editor_absoluteX="124dp"
+                tools:layout_editor_absoluteY="425dp" />
+
+            <EditText
+                android:id="@+id/editTextEnglish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/english_word"
+                android:inputType="text"
+                tools:layout_editor_absoluteX="124dp"
+                tools:layout_editor_absoluteY="425dp" />
+
+            <EditText
+                android:id="@+id/editTextSynonym"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/synonym"
+                android:inputType="text"
+                tools:layout_editor_absoluteX="124dp"
+                tools:layout_editor_absoluteY="425dp" />
+
+            <EditText
+                android:id="@+id/editTextExample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/example"
+                android:inputType="text"
+                tools:layout_editor_absoluteX="124dp"
+                tools:layout_editor_absoluteY="425dp" />
+
+            <EditText
+                android:id="@+id/editTextWebLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/web_link"
+                android:inputType="text"
+                tools:layout_editor_absoluteX="124dp"
+                tools:layout_editor_absoluteY="425dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonRecord"
+                app:cornerRadius="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/record"
+                android:textAllCaps="false"
+                tools:layout_editor_absoluteX="165dp"
+                tools:layout_editor_absoluteY="431dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="@color/blue"
+                android:text="@string/register"
+                android:textAllCaps="false"
+                app:cornerRadius="100dp"
+                tools:layout_editor_absoluteX="165dp"
+                tools:layout_editor_absoluteY="431dp" />
+        </LinearLayout>
+
+
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

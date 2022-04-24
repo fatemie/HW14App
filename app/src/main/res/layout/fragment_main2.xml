@@ -44,7 +44,7 @@
                     android:layout_margin="16dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/blue"
-                    android:text="جستجو"
+                    android:text="@string/search"
                     android:textAllCaps="false" />
 
 
@@ -68,19 +68,19 @@
                     android:id="@+id/persianSearch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="جستجو کلمه به فارسی"/>
+                    android:hint="@string/search_in_persian"/>
                 <EditText
                     android:id="@+id/englishSearch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="جستجو کلمه به انگلیسی"/>
+                    android:hint="@string/search_in_english"/>
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/buttonSearch2"
                     app:cornerRadius="100dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/teal_700"
-                    android:text="جستجو"
+                    android:text="@string/search"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     android:textAllCaps="false"

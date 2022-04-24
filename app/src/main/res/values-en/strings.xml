@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HW14App</string>
+    <string name="new_word">New word Info</string>
+    <string name="persian_word">word in persian</string>
+    <string name="english_word">word in English</string>
+    <string name="synonym">synonym</string>
+    <string name="example">example</string>
+    <string name="register">save</string>
+    <string name="web_link">wiki pedia link</string>
+    <string name="add">add</string>
+    <string name="record">record audio</string>
+    <string name="search">search</string>
+    <string name="search_in_persian">search in persian</string>
+    <string name="search_in_english">search in english</string>
+    <string name="word_info">Word info</string>
+    <string name="play">play audio</string>
+    <string name="delete">delete word</string>
+    <string name="edit">edit word</string>
+    <string name="english">english</string>
+    <string name="persian">persian</string>
+    <string name="hello_blank_fragment">hello</string>
+</resources>

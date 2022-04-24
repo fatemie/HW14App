@@ -20,14 +20,14 @@
                 android:id="@+id/tvWordEnglish"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="english"
+                android:text="@string/english"
                 android:layout_weight="1"
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/tvWordPersian"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="persian"
+                android:text="@string/persian"
                 android:layout_weight="1"
                 android:gravity="center"/>
 
