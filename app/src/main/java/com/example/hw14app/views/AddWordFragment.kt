@@ -2,7 +2,6 @@ package com.example.hw14app.views
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.media.MediaRecorder
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +15,6 @@ import com.example.hw14app.R
 import com.example.hw14app.databinding.FragmentAddWordBinding
 import com.example.hw14app.model.Word
 import com.example.hw14app.viewModels.MainViewModel
-import java.io.IOException
 import java.util.*
 
 
@@ -33,7 +31,7 @@ class AddWordFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentAddWordBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -45,7 +43,7 @@ class AddWordFragment : Fragment() {
 
     private fun setListener() {
         binding.buttonRegister.setOnClickListener {
-            var word = Word(
+            val word = Word(
                 0,
                 binding.editTextPersian.text.toString(),
                 binding.editTextEnglish.text.toString(),
@@ -60,7 +58,13 @@ class AddWordFragment : Fragment() {
             findNavController().navigate(R.id.action_addWordFragment_to_mainFragment)
         }
         binding.buttonRecord.setOnClickListener {
-            activity?.let { it1 -> ActivityCompat.requestPermissions(it1, permissions, REQUEST_RECORD_AUDIO_PERMISSION) }
+            activity?.let { it1 ->
+                ActivityCompat.requestPermissions(
+                    it1,
+                    permissions,
+                    REQUEST_RECORD_AUDIO_PERMISSION
+                )
+            }
             if (isRecording) {
                 binding.buttonRecord.text = "ضبط صدا"
                 vModel.stopRecording()

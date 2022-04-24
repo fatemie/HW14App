@@ -4,17 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.hw14app.FirstDialogFragment
 import com.example.hw14app.R
 import com.example.hw14app.databinding.FragmentMain2Binding
 import com.example.hw14app.model.Word
-import com.example.hw14app.repository.DictionaryRepository
 import com.example.hw14app.viewModels.MainViewModel
 import com.example.myapp.WordAdapter
 
@@ -28,7 +25,7 @@ class MainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMain2Binding.inflate(inflater, container, false)
         binding.wordCount = vModel.wordCountLiveData.value!!.toString()
         return binding.root
@@ -38,6 +35,12 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initList()
         setListener()
+    }
+
+    private fun initList() {
+        val adapter = WordAdapter({ word -> goToWordDetail(word) })
+        binding.wordsRecyclerView.adapter = adapter
+        adapter.submitList(vModel.dictionary)
     }
 
     private fun setListener() {
@@ -53,12 +56,22 @@ class MainFragment : Fragment() {
                 !binding.englishSearch.text.isNullOrEmpty()
             ) {
                 word = vModel.getWordWithEnglish(binding.englishSearch.text.toString())
+
             } else if (binding.englishSearch.text.isNullOrEmpty() &&
                 !binding.persianSearch.text.isNullOrEmpty()
             ) {
                 word = vModel.getWordWithPersian(binding.persianSearch.text.toString())
             }
             searchResult(word)
+        }
+    }
+
+    fun searchResult(word: Word?) {
+        if (word != null) {
+            goToWordDetail(word)
+        } else {
+            val dialog = FirstDialogFragment()
+            activity?.let { dialog.show(it.supportFragmentManager, "NoticeDialogFragment") }
         }
     }
 
@@ -71,21 +84,7 @@ class MainFragment : Fragment() {
         findNavController().navigate(action)
     }
 
-    fun searchResult(word: Word?) {
-        if(word != null){
-            goToWordDetail(word)
-        }else{
-            val dialog = FirstDialogFragment()
-            activity?.let { dialog.show(it.supportFragmentManager, "NoticeDialogFragment") }
-        }
-    }
 
-
-    private fun initList() {
-        var adapter = WordAdapter({ word -> goToWordDetail(word) })
-        binding.wordsRecyclerView.adapter = adapter
-        adapter.submitList(vModel.dictionary)
-    }
 
 
 

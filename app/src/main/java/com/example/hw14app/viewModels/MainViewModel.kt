@@ -4,21 +4,19 @@ import android.app.Application
 import android.media.MediaPlayer
 import android.media.MediaRecorder
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.hw14app.databinding.FragmentMain2Binding
 import com.example.hw14app.model.Word
 import com.example.hw14app.repository.DictionaryRepository
 import java.io.IOException
 
-class MainViewModel(app: Application): AndroidViewModel(app){
+class MainViewModel(app: Application) : AndroidViewModel(app) {
 
     var dictionary = listOf<Word>()
     var wordCountLiveData = MutableLiveData<Int>(0)
     private var player: MediaPlayer? = null
     private var recorder: MediaRecorder? = null
 
-    init{
+    init {
         DictionaryRepository.initDB(app.applicationContext)
         dictionary = DictionaryRepository.getAllWords()!!
         wordCountLiveData.value = DictionaryRepository.getWordsCount2()!!
@@ -29,27 +27,27 @@ class MainViewModel(app: Application): AndroidViewModel(app){
         DictionaryRepository.insertWord(word)
     }
 
-    fun deleteWord(word: Word){
+    fun deleteWord(word: Word) {
         DictionaryRepository.deleteWord(word)
     }
 
-    fun updateWord(word : Word){
+    fun updateWord(word: Word) {
         DictionaryRepository.updateWord(word)
     }
 
-    fun getWord(wordId : Int) : Word? {
+    fun getWord(wordId: Int): Word? {
         return DictionaryRepository.getWordWithID(wordId)
     }
 
-    fun getWordWithPersian(persian : String): Word?{
+    fun getWordWithPersian(persian: String): Word? {
         return DictionaryRepository.getWordWithPersian(persian)
     }
 
-    fun getWordWithEnglish(english : String): Word?{
+    fun getWordWithEnglish(english: String): Word? {
         return DictionaryRepository.getWordWithEnglish(english)
     }
 
-    fun startPlaying(address : String) {
+    fun startPlaying(address: String) {
         player = MediaPlayer().apply {
             try {
                 setDataSource(address)
@@ -61,7 +59,7 @@ class MainViewModel(app: Application): AndroidViewModel(app){
         }
     }
 
-    fun startRecording(address : String) {
+    fun startRecording(address: String) {
         recorder = MediaRecorder().apply {
             setAudioSource(MediaRecorder.AudioSource.MIC)
             setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
@@ -85,7 +83,7 @@ class MainViewModel(app: Application): AndroidViewModel(app){
         recorder = null
     }
 
-    fun updateViews(){
+    fun updateViews() {
         wordCountLiveData.value = DictionaryRepository.getWordsCount2()!!
         dictionary = DictionaryRepository.getAllWords()!!
     }

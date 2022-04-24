@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
 }
 
 class FirstDialogFragment : DialogFragment() {
-    private val vModel : MainViewModel by viewModels()
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             // Use the Builder class for convenient dialog construction
@@ -54,6 +53,4 @@ class FirstDialogFragment : DialogFragment() {
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }
-
-
 }
